@@ -7,17 +7,19 @@ class CustomizeListTile extends StatelessWidget {
   final String title;
   final String imagePath;
   final Color color;
+  final bool showButton;
 
   const CustomizeListTile(
       {super.key,
       required this.title,
       required this.imagePath,
-      required this.color});
+      required this.color,
+      this.showButton = false});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      dense: true,
+        dense: true,
       contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
       leading: Container(
         height: 50.h,
@@ -34,10 +36,17 @@ class CustomizeListTile extends StatelessWidget {
         title,
         style: textRegularStyle(fontSize: 20, fontWeight: FontWeight.w500),
       ),
-      trailing: Switch(
-        value: false, //set true to enable switch by default
-        onChanged: (bool value) {},
-      ),
-    );
+        trailing: (showButton)
+            ? Switch(
+                value: false, //set true to enable switch by default
+                onChanged: (bool value) {},
+              )
+            : Padding(
+                padding: EdgeInsets.only(right: 4.0.w),
+                child: const Icon(
+                  Icons.keyboard_arrow_right,
+                  size: 40,
+                ),
+              ));
   }
 }

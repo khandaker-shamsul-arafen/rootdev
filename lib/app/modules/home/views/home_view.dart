@@ -169,15 +169,15 @@ class HomeView extends GetView<HomeController> {
                       ),
                     );
                   },
-                      separatorBuilder: (BuildContext context, int index) {
-                        // Build the separator between items
-                        return Container(
-                          height: 12,
-                          width: Get.width,
-                          color: Colors.white,
-                        );
-                      },
-                    ),
+                  separatorBuilder: (BuildContext context, int index) {
+                    // Build the separator between items
+                    return Container(
+                      height: 12,
+                      width: Get.width,
+                      color: Colors.white,
+                    );
+                  },
+                ),
               ),
             )
           ],

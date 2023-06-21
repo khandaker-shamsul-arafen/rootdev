@@ -5,6 +5,8 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:rootdev/app/constant/app_colors.dart';
 import 'package:rootdev/app/constant/app_widgets.dart';
 
+import '../constant/app_style.dart';
+
 class AllLeaguesWidget extends StatelessWidget {
   final String ligueImage;
   final String ligueText;
@@ -38,7 +40,7 @@ class AllLeaguesWidget extends StatelessWidget {
       children: [
         Container(
           width: Get.width,
-          color: Color(0xFFFFFFFFE4),
+          color: const Color(0xFFFFFFFFE4),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -67,7 +69,7 @@ class AllLeaguesWidget extends StatelessWidget {
                         width: 50.w,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: NetworkImage('$ligueImage'),
+                            image: NetworkImage(ligueImage),
                             fit: BoxFit.contain,
                           ),
                           // color: Colors.amberAccent,
@@ -99,7 +101,7 @@ class AllLeaguesWidget extends StatelessWidget {
                       ),
                       Text(
                         ligueCountry,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                             color: Colors.grey),
@@ -116,47 +118,40 @@ class AllLeaguesWidget extends StatelessWidget {
           width: Get.width,
           color: Colors.white,
         ),
-        Container(
+        SizedBox(
           width: Get.width,
-          //     color: Colors.brown,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
+                SizedBox(
                   width: Get.width * 0.38,
-                  // color: Colors.brown,
-                  height: 110,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
+                  height: 110.h,
+                  child: Center(
+                    child: ListTile(
+                      dense: true,
+                      contentPadding:
+                          const EdgeInsets.only(left: 0.0, right: 0.0),
+                      leading: Container(
                         height: 60.h,
                         width: Get.width * 0.1,
                         decoration: BoxDecoration(
-                          //   color: Colors.blue,
-                          image: DecorationImage(
-                            image: NetworkImage(teamImage1),
-                            fit: BoxFit.contain,
-                          ),
-                          // color: Colors.amberAccent,
-                        ),
+                            image: DecorationImage(
+                                image: NetworkImage("$teamImage1"))),
                       ),
-                      AppWidgets().gapW(8),
-                      Expanded(
-                        child: Text(teamName1,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 18.sp)),
+                      title: Text(
+                        teamName1,
+                        style: textRegularStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500),
                       ),
-                    ],
+                    ),
                   ),
                 ),
                 AppWidgets().gapW10(),
                 RotationTransition(
-                  turns: AlwaysStoppedAnimation(-5 / 360),
+                  turns: const AlwaysStoppedAnimation(-2 / 360),
                   child: Container(
                     height: 80.h,
                     width: Get.width * 0.2,
@@ -172,37 +167,30 @@ class AllLeaguesWidget extends StatelessWidget {
                 ),
                 AppWidgets().gapW16(),
                 Container(
-                  width: Get.width * 0.43,
+                  width: Get.width * 0.48,
                   // color: Colors.brown,
                   height: 60,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
+                  child: Center(
+                    child: ListTile(
+                      dense: true,
+                      contentPadding:
+                          const EdgeInsets.only(left: 0.0, right: 0.0),
+                      leading: Container(
                         height: 60.h,
                         width: Get.width * 0.1,
                         decoration: BoxDecoration(
-                          //   color: Colors.blue,
-                          image: DecorationImage(
-                            image: NetworkImage(teamImage2),
-                            fit: BoxFit.contain,
-                          ),
-                          // color: Colors.amberAccent,
-                        ),
+                            image: DecorationImage(
+                                image: NetworkImage(teamImage2))),
                       ),
-                      AppWidgets().gapW(8),
-                      Expanded(
-                        child: Text(
-                          teamName2,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 18.sp),
-                        ),
+                      title: Text(
+                        teamName2,
+                        style: textRegularStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500),
                       ),
-                      Icon(
+                      trailing: const Icon(
                         Icons.keyboard_arrow_down,
-                      )
-                    ],
+                      ),
+                    ),
                   ),
                 ),
               ],
