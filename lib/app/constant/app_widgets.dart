@@ -51,28 +51,4 @@ class AppWidgets {
       width: 16.w,
     );
   }
-
-  Widget gapW12() {
-    return SizedBox(
-      width: 12.h,
-    );
-  }
-
-  Widget gapH12() {
-    return SizedBox(
-      height: 12.h,
-    );
-  }
-
-  Widget gapW24() {
-    return const SizedBox(
-      width: 24,
-    );
-  }
-
-  Widget gapH24() {
-    return SizedBox(
-      height: 24.h,
-    );
-  }
 }

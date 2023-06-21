@@ -33,7 +33,6 @@ class AllLeaguesWidget extends StatelessWidget {
     required this.score2,
   });
 
-  // const AllLeaguesWidget({super.key, required this.ligueText, required this.ligueImage,});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -187,8 +186,10 @@ class AllLeaguesWidget extends StatelessWidget {
                         height: 65.h,
                         width: Get.width * 0.1,
                         decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage(teamImage2))),
+                          image: DecorationImage(
+                            image: NetworkImage(teamImage2),
+                          ),
+                        ),
                       ),
                       title: Text(
                         teamName2,

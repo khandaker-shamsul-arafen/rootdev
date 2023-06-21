@@ -52,7 +52,6 @@ class HomeView extends GetView<HomeController> {
             ],
           ),
           centerTitle: true,
-          // Center align the title
           actions: [
             IconButton(
               icon: const Icon(
@@ -69,7 +68,6 @@ class HomeView extends GetView<HomeController> {
 
         body: Column(
           children: [
-            //AppWidgets().gapH16(),
             Stack(
               children: [
                 Container(
@@ -156,17 +154,19 @@ class HomeView extends GetView<HomeController> {
                       width: 65.w,
                       color: AppColors.whiteColor,
                       child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: RotationTransition(
-                              turns: const AlwaysStoppedAnimation(13 / 360),
-                              child: Padding(
-                                padding: EdgeInsets.only(bottom: 4.0),
-                                child: Text(
-                                  'LIVE',
-                                  style: textRegularStyleW600(
-                                      color: Colors.red, fontSize: 22),
-                                ),
-                              ))),
+                        alignment: Alignment.bottomCenter,
+                        child: RotationTransition(
+                          turns: const AlwaysStoppedAnimation(13 / 360),
+                          child: Padding(
+                            padding: EdgeInsets.only(bottom: 4.0),
+                            child: Text(
+                              'LIVE',
+                              style: textRegularStyleW600(
+                                  color: Colors.red, fontSize: 22),
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 )

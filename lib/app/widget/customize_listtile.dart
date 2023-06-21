@@ -20,25 +20,25 @@ class CustomizeListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
         dense: true,
-      contentPadding: EdgeInsets.only(left: 0.0, right: 0.0),
-      leading: Container(
-        height: 50.h,
-        width: 50.w,
-        decoration: BoxDecoration(
+        contentPadding: const EdgeInsets.only(left: 0.0, right: 0.0),
+        leading: Container(
+          height: 50.h,
+          width: 50.w,
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: color.withOpacity(0.2),
-            image: DecorationImage(image: AssetImage("$imagePath"))),
-        // child: Center(
-        //   child: Image.asset("$imagePath"),
-        // ),
-      ),
-      title: Text(
-        title,
-        style: textRegularStyle(fontSize: 20, fontWeight: FontWeight.w500),
-      ),
+            image: DecorationImage(
+              image: AssetImage(imagePath),
+            ),
+          ),
+        ),
+        title: Text(
+          title,
+          style: textRegularStyle(fontSize: 20, fontWeight: FontWeight.w500),
+        ),
         trailing: (showButton)
             ? Switch(
-                value: false, //set true to enable switch by default
+                value: false,
                 onChanged: (bool value) {},
               )
             : Padding(

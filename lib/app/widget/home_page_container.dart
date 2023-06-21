@@ -40,8 +40,8 @@ class HomePageContainer extends StatelessWidget {
                 ? TextStyle(color: Colors.black, fontSize: 14.sp)
                 : TextStyle(color: Colors.white, fontSize: 14.sp),
           )
-        ],),
-
+        ],
+      ),
     );
   }
 }

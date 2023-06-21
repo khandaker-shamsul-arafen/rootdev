@@ -19,7 +19,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
           body: controller.tabs[controller.currentIndex.value],
           bottomNavigationBar: Container(
             color: AppColors.bottomBackGroundColor,
-            height: 60,
+            height: 60.h,
             child: TabBar(
               controller: controller.tapController,
               indicatorColor: Colors.transparent,
@@ -28,7 +28,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
               indicatorPadding: EdgeInsets.zero,
               labelPadding: EdgeInsets.zero,
               labelStyle: textRegularStyle(
-                fontSize: 16,
+                fontSize: 16.sp,
               ),
               labelColor: AppColors.unSelectedColor,
               onTap: (index) {

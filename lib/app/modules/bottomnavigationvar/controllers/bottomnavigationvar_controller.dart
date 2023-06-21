@@ -21,6 +21,7 @@ class BottomnavigationvarController extends GetxController
     const HomeView(),
   ];
   final count = 0.obs;
+
   @override
   void onInit() {
     tapController = TabController(
@@ -28,8 +29,6 @@ class BottomnavigationvarController extends GetxController
       length: 5,
       vsync: this,
     );
-    print("${Get.height}");
-    print("${Get.width}");
     super.onInit();
   }
 
