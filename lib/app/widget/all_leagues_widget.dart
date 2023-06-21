@@ -1,0 +1,194 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:rootdev/app/constant/app_colors.dart';
+import 'package:rootdev/app/constant/app_widgets.dart';
+
+class AllLeaguesWidget extends StatelessWidget {
+  final String ligueImage;
+  final String ligueText;
+  final String ligueCountry;
+  final String teamImage1;
+  final String teamImage2;
+  final String teamName1;
+  final String teamName2;
+
+  const AllLeaguesWidget(
+      {super.key,
+      required this.ligueImage,
+      required this.ligueText,
+      required this.ligueCountry,
+      required this.teamImage1,
+      required this.teamImage2,
+      required this.teamName1,
+      required this.teamName2});
+
+  // const AllLeaguesWidget({super.key, required this.ligueText, required this.ligueImage,});
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: Get.width,
+          color: Color(0xFFFFFFFFE4),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 10.0.h,
+                    bottom: 10.0.h,
+                    left: 10.w,
+                  ),
+                  child: Container(
+                    height: 60.h,
+                    width: 50.w,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(18),
+                      border: Border.all(
+                          width: 1,
+                          color: AppColors.greyColor.withOpacity(0.4)),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        height: 50.h,
+                        width: 50.w,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage('$ligueImage'),
+                            fit: BoxFit.contain,
+                          ),
+                          // color: Colors.amberAccent,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                AppWidgets().gapW10(),
+                Container(
+                  height: 60.h,
+                  width: Get.width,
+                  color: Colors.white.withOpacity(0.1),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            ligueText,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
+                          Text("| 1st PHASE")
+                        ],
+                      ),
+                      Text(
+                        ligueCountry,
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+        Container(
+          width: Get.width,
+          //     color: Colors.brown,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: Get.width * 0.43,
+                  // color: Colors.brown,
+                  height: 60,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 60.h,
+                        width: Get.width * 0.1,
+                        decoration: BoxDecoration(
+                          //   color: Colors.blue,
+                          image: DecorationImage(
+                            image: NetworkImage(teamImage1),
+                            fit: BoxFit.contain,
+                          ),
+                          // color: Colors.amberAccent,
+                        ),
+                      ),
+                      AppWidgets().gapW(5),
+                      Expanded(
+                        child: Text(teamName1),
+                      ),
+                    ],
+                  ),
+                ),
+                AppWidgets().gapW10(),
+                Container(
+                  height: 100.h,
+                  width: Get.width * 0.2,
+                  color: Colors.grey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text("1 - 0"),
+                      Text("AET"),
+                    ],
+                  ),
+                ),
+                AppWidgets().gapW10(),
+                Container(
+                  width: Get.width * 0.43,
+                  // color: Colors.brown,
+                  height: 60,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 60.h,
+                        width: Get.width * 0.1,
+                        decoration: BoxDecoration(
+                          //   color: Colors.blue,
+                          image: DecorationImage(
+                            image: NetworkImage(teamImage2),
+                            fit: BoxFit.contain,
+                          ),
+                          // color: Colors.amberAccent,
+                        ),
+                      ),
+                      AppWidgets().gapW(5),
+                      Expanded(
+                        child: Text(teamName2),
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_down,
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
