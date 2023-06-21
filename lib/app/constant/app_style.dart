@@ -6,7 +6,7 @@ import 'app_constant.dart';
 
 TextStyle textRegularStyle(
     {color = AppColors.blackColor,
-    double fontSize = fontSize14,
+    double fontSize = fontSize16,
     fontWeight = FontWeight.w400,
     double? lineHeight}) {
   return TextStyle(
@@ -19,6 +19,17 @@ TextStyle textRegularStyle(
 
 TextStyle appbarTextStyle(
     {double fontSize = fontSize20,
+    fontWeight = FontWeight.bold,
+    color = AppColors.blackColor}) {
+  return TextStyle(
+    fontSize: fontSize.sp,
+    color: color,
+    fontWeight: fontWeight,
+  );
+}
+
+TextStyle drawerTextStyle(
+    {double fontSize = fontSize28,
     fontWeight = FontWeight.bold,
     color = AppColors.blackColor}) {
   return TextStyle(

@@ -10,9 +10,8 @@ class HomePageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55.h,
-      width: 80.w,
-
+      height: 50.h,
+      width: 70.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         color: AppColors.greyColor.withOpacity(0.5),
@@ -21,8 +20,11 @@ class HomePageContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        Text(day,style: TextStyle(color: Colors.white),),
-        Text(date,style: TextStyle(color: Colors.white),)
+          Text(
+            day,
+            style: TextStyle(color: Colors.white),
+          ),
+          Text(date,style: TextStyle(color: Colors.white),)
       ],),
 
     );

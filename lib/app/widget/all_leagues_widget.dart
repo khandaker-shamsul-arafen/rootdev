@@ -13,16 +13,23 @@ class AllLeaguesWidget extends StatelessWidget {
   final String teamImage2;
   final String teamName1;
   final String teamName2;
+  final String state;
+  final String score1;
+  final String score2;
 
-  const AllLeaguesWidget(
-      {super.key,
-      required this.ligueImage,
-      required this.ligueText,
-      required this.ligueCountry,
-      required this.teamImage1,
-      required this.teamImage2,
-      required this.teamName1,
-      required this.teamName2});
+  const AllLeaguesWidget({
+    super.key,
+    required this.ligueImage,
+    required this.ligueText,
+    required this.ligueCountry,
+    required this.teamImage1,
+    required this.teamImage2,
+    required this.teamName1,
+    required this.teamName2,
+    required this.state,
+    required this.score1,
+    required this.score2,
+  });
 
   // const AllLeaguesWidget({super.key, required this.ligueText, required this.ligueImage,});
   @override
@@ -85,7 +92,7 @@ class AllLeaguesWidget extends StatelessWidget {
                           Text(
                             ligueText,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18),
+                                fontWeight: FontWeight.bold, fontSize: 18.sp),
                           ),
                           Text("| 1st PHASE")
                         ],
@@ -105,6 +112,11 @@ class AllLeaguesWidget extends StatelessWidget {
           ),
         ),
         Container(
+          height: 12,
+          width: Get.width,
+          color: Colors.white,
+        ),
+        Container(
           width: Get.width,
           //     color: Colors.brown,
           child: SingleChildScrollView(
@@ -114,9 +126,9 @@ class AllLeaguesWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: Get.width * 0.43,
+                  width: Get.width * 0.38,
                   // color: Colors.brown,
-                  height: 60,
+                  height: 110,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -133,27 +145,32 @@ class AllLeaguesWidget extends StatelessWidget {
                           // color: Colors.amberAccent,
                         ),
                       ),
-                      AppWidgets().gapW(5),
+                      AppWidgets().gapW(8),
                       Expanded(
-                        child: Text(teamName1),
+                        child: Text(teamName1,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 18.sp)),
                       ),
                     ],
                   ),
                 ),
                 AppWidgets().gapW10(),
-                Container(
-                  height: 100.h,
-                  width: Get.width * 0.2,
-                  color: Colors.grey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text("1 - 0"),
-                      Text("AET"),
-                    ],
+                RotationTransition(
+                  turns: AlwaysStoppedAnimation(-5 / 360),
+                  child: Container(
+                    height: 80.h,
+                    width: Get.width * 0.2,
+                    color: Colors.grey,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text("$score1 - $score2"),
+                        Text(state),
+                      ],
+                    ),
                   ),
                 ),
-                AppWidgets().gapW10(),
+                AppWidgets().gapW16(),
                 Container(
                   width: Get.width * 0.43,
                   // color: Colors.brown,
@@ -174,9 +191,13 @@ class AllLeaguesWidget extends StatelessWidget {
                           // color: Colors.amberAccent,
                         ),
                       ),
-                      AppWidgets().gapW(5),
+                      AppWidgets().gapW(8),
                       Expanded(
-                        child: Text(teamName2),
+                        child: Text(
+                          teamName2,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 18.sp),
+                        ),
                       ),
                       Icon(
                         Icons.keyboard_arrow_down,

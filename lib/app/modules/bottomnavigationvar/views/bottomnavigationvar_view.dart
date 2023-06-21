@@ -24,7 +24,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
               controller: controller.tapController,
               indicatorColor: Colors.transparent,
               unselectedLabelColor: AppColors.blackColor,
-              padding: EdgeInsets.only(left: 1.w),
+              padding: EdgeInsets.only(left: 1.w, right: 1.w, bottom: 3.h),
               indicatorPadding: EdgeInsets.zero,
               labelPadding: EdgeInsets.zero,
               labelStyle: textRegularStyle(
