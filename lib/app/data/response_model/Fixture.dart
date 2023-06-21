@@ -3,11 +3,12 @@ Fixture fixtureFromJson(String str) => Fixture.fromJson(json.decode(str));
 String fixtureToJson(Fixture data) => json.encode(data.toJson());
 class Fixture {
   Fixture({
-      this.data, 
-      this.pagination, 
-      this.subscription, 
-      this.rateLimit, 
-      this.timezone,});
+    this.data,
+    this.pagination,
+    this.subscription,
+    this.rateLimit,
+    this.timezone,
+  });
 
   Fixture.fromJson(dynamic json) {
     if (json['data'] != null) {
@@ -56,9 +57,10 @@ RateLimit rateLimitFromJson(String str) => RateLimit.fromJson(json.decode(str));
 String rateLimitToJson(RateLimit data) => json.encode(data.toJson());
 class RateLimit {
   RateLimit({
-      this.resetsInSeconds, 
-      this.remaining, 
-      this.requestedEntity,});
+    this.resetsInSeconds,
+    this.remaining,
+    this.requestedEntity,
+  });
 
   RateLimit.fromJson(dynamic json) {
     resetsInSeconds = json['resets_in_seconds'];
@@ -83,10 +85,11 @@ Subscription subscriptionFromJson(String str) => Subscription.fromJson(json.deco
 String subscriptionToJson(Subscription data) => json.encode(data.toJson());
 class Subscription {
   Subscription({
-      this.meta, 
-      this.plans, 
-      this.addOns, 
-      this.widgets,});
+    this.meta,
+    this.plans,
+    this.addOns,
+    this.widgets,
+  });
 
   Subscription.fromJson(dynamic json) {
     meta = json['meta'] != null ? Meta.fromJson(json['meta']) : null;
@@ -126,9 +129,10 @@ Plans plansFromJson(String str) => Plans.fromJson(json.decode(str));
 String plansToJson(Plans data) => json.encode(data.toJson());
 class Plans {
   Plans({
-      this.plan, 
-      this.sport, 
-      this.category,});
+    this.plan,
+    this.sport,
+    this.category,
+  });
 
   Plans.fromJson(dynamic json) {
     plan = json['plan'];
@@ -153,8 +157,9 @@ Meta metaFromJson(String str) => Meta.fromJson(json.decode(str));
 String metaToJson(Meta data) => json.encode(data.toJson());
 class Meta {
   Meta({
-      this.trialEndsAt, 
-      this.endsAt,});
+    this.trialEndsAt,
+    this.endsAt,
+  });
 
   Meta.fromJson(dynamic json) {
     trialEndsAt = json['trial_ends_at'];
@@ -176,11 +181,12 @@ Pagination paginationFromJson(String str) => Pagination.fromJson(json.decode(str
 String paginationToJson(Pagination data) => json.encode(data.toJson());
 class Pagination {
   Pagination({
-      this.count, 
-      this.perPage, 
-      this.currentPage, 
-      this.nextPage, 
-      this.hasMore,});
+    this.count,
+    this.perPage,
+    this.currentPage,
+    this.nextPage,
+    this.hasMore,
+  });
 
   Pagination.fromJson(dynamic json) {
     count = json['count'];
@@ -211,32 +217,33 @@ Data dataFromJson(String str) => Data.fromJson(json.decode(str));
 String dataToJson(Data data) => json.encode(data.toJson());
 class Data {
   Data({
-      this.id, 
-      this.sportId, 
-      this.leagueId, 
-      this.seasonId, 
-      this.stageId, 
-      this.groupId, 
-      this.aggregateId, 
-      this.roundId, 
-      this.stateId, 
-      this.venueId, 
-      this.name, 
-      this.startingAt, 
-      this.resultInfo, 
-      this.leg, 
-      this.details, 
-      this.length, 
-      this.placeholder, 
-      this.hasOdds, 
-      this.startingAtTimestamp, 
-      this.league, 
-      this.participants, 
-      this.round, 
-      this.state, 
-      this.periods, 
-      this.scores, 
-      this.events,});
+    this.id,
+    this.sportId,
+    this.leagueId,
+    this.seasonId,
+    this.stageId,
+    this.groupId,
+    this.aggregateId,
+    this.roundId,
+    this.stateId,
+    this.venueId,
+    this.name,
+    this.startingAt,
+    this.resultInfo,
+    this.leg,
+    this.details,
+    this.length,
+    this.placeholder,
+    this.hasOdds,
+    this.startingAtTimestamp,
+    this.league,
+    this.participants,
+    this.round,
+    this.state,
+    this.periods,
+    this.scores,
+    this.events,
+  });
 
   Data.fromJson(dynamic json) {
     id = json['id'];
@@ -362,26 +369,27 @@ Events eventsFromJson(String str) => Events.fromJson(json.decode(str));
 String eventsToJson(Events data) => json.encode(data.toJson());
 class Events {
   Events({
-      this.id, 
-      this.fixtureId, 
-      this.periodId, 
-      this.participantId, 
-      this.typeId, 
-      this.section, 
-      this.playerId, 
-      this.relatedPlayerId, 
-      this.playerName, 
-      this.relatedPlayerName, 
-      this.result, 
-      this.info, 
-      this.addition, 
-      this.minute, 
-      this.extraMinute, 
-      this.injured, 
-      this.onBench, 
-      this.coachId, 
-      this.subTypeId, 
-      this.type,});
+    this.id,
+    this.fixtureId,
+    this.periodId,
+    this.participantId,
+    this.typeId,
+    this.section,
+    this.playerId,
+    this.relatedPlayerId,
+    this.playerName,
+    this.relatedPlayerName,
+    this.result,
+    this.info,
+    this.addition,
+    this.minute,
+    this.extraMinute,
+    this.injured,
+    this.onBench,
+    this.coachId,
+    this.subTypeId,
+    this.type,
+  });
 
   Events.fromJson(dynamic json) {
     id = json['id'];
@@ -459,12 +467,13 @@ Type typeFromJson(String str) => Type.fromJson(json.decode(str));
 String typeToJson(Type data) => json.encode(data.toJson());
 class Type {
   Type({
-      this.id, 
-      this.name, 
-      this.code, 
-      this.developerName, 
-      this.modelType, 
-      this.statGroup,});
+    this.id,
+    this.name,
+    this.code,
+    this.developerName,
+    this.modelType,
+    this.statGroup,
+  });
 
   Type.fromJson(dynamic json) {
     id = json['id'];
@@ -498,12 +507,13 @@ Scores scoresFromJson(String str) => Scores.fromJson(json.decode(str));
 String scoresToJson(Scores data) => json.encode(data.toJson());
 class Scores {
   Scores({
-      this.id, 
-      this.fixtureId, 
-      this.typeId, 
-      this.participantId, 
-      this.score, 
-      this.description,});
+    this.id,
+    this.fixtureId,
+    this.typeId,
+    this.participantId,
+    this.score,
+    this.description,
+  });
 
   Scores.fromJson(dynamic json) {
     id = json['id'];
@@ -539,8 +549,9 @@ Score scoreFromJson(String str) => Score.fromJson(json.decode(str));
 String scoreToJson(Score data) => json.encode(data.toJson());
 class Score {
   Score({
-      this.goals, 
-      this.participant,});
+    this.goals,
+    this.participant,
+  });
 
   Score.fromJson(dynamic json) {
     goals = json['goals'];
@@ -562,19 +573,20 @@ Periods periodsFromJson(String str) => Periods.fromJson(json.decode(str));
 String periodsToJson(Periods data) => json.encode(data.toJson());
 class Periods {
   Periods({
-      this.id, 
-      this.fixtureId, 
-      this.typeId, 
-      this.started, 
-      this.ended, 
-      this.countsFrom, 
-      this.ticking, 
-      this.sortOrder, 
-      this.description, 
-      this.timeAdded, 
-      this.periodLength, 
-      this.minutes, 
-      this.seconds,});
+    this.id,
+    this.fixtureId,
+    this.typeId,
+    this.started,
+    this.ended,
+    this.countsFrom,
+    this.ticking,
+    this.sortOrder,
+    this.description,
+    this.timeAdded,
+    this.periodLength,
+    this.minutes,
+    this.seconds,
+  });
 
   Periods.fromJson(dynamic json) {
     id = json['id'];
@@ -629,11 +641,12 @@ State stateFromJson(String str) => State.fromJson(json.decode(str));
 String stateToJson(State data) => json.encode(data.toJson());
 class State {
   State({
-      this.id, 
-      this.state, 
-      this.name, 
-      this.shortName, 
-      this.developerName,});
+    this.id,
+    this.state,
+    this.name,
+    this.shortName,
+    this.developerName,
+  });
 
   State.fromJson(dynamic json) {
     id = json['id'];
@@ -664,19 +677,20 @@ Participants participantsFromJson(String str) => Participants.fromJson(json.deco
 String participantsToJson(Participants data) => json.encode(data.toJson());
 class Participants {
   Participants({
-      this.id, 
-      this.sportId, 
-      this.countryId, 
-      this.venueId, 
-      this.gender, 
-      this.name, 
-      this.shortCode, 
-      this.imagePath, 
-      this.founded, 
-      this.type, 
-      this.placeholder, 
-      this.lastPlayedAt, 
-      this.meta,});
+    this.id,
+    this.sportId,
+    this.countryId,
+    this.venueId,
+    this.gender,
+    this.name,
+    this.shortCode,
+    this.imagePath,
+    this.founded,
+    this.type,
+    this.placeholder,
+    this.lastPlayedAt,
+    this.meta,
+  });
 
   Participants.fromJson(dynamic json) {
     id = json['id'];
@@ -735,19 +749,20 @@ League leagueFromJson(String str) => League.fromJson(json.decode(str));
 String leagueToJson(League data) => json.encode(data.toJson());
 class League {
   League({
-      this.id, 
-      this.sportId, 
-      this.countryId, 
-      this.name, 
-      this.active, 
-      this.shortCode, 
-      this.imagePath, 
-      this.type, 
-      this.subType, 
-      this.lastPlayedAt, 
-      this.category, 
-      this.hasJerseys, 
-      this.country,});
+    this.id,
+    this.sportId,
+    this.countryId,
+    this.name,
+    this.active,
+    this.shortCode,
+    this.imagePath,
+    this.type,
+    this.subType,
+    this.lastPlayedAt,
+    this.category,
+    this.hasJerseys,
+    this.country,
+  });
 
   League.fromJson(dynamic json) {
     id = json['id'];
@@ -804,17 +819,18 @@ Country countryFromJson(String str) => Country.fromJson(json.decode(str));
 String countryToJson(Country data) => json.encode(data.toJson());
 class Country {
   Country({
-      this.id, 
-      this.continentId, 
-      this.name, 
-      this.officialName, 
-      this.fifaName, 
-      this.iso2, 
-      this.iso3, 
-      this.latitude, 
-      this.longitude, 
-      this.borders, 
-      this.imagePath,});
+    this.id,
+    this.continentId,
+    this.name,
+    this.officialName,
+    this.fifaName,
+    this.iso2,
+    this.iso3,
+    this.latitude,
+    this.longitude,
+    this.borders,
+    this.imagePath,
+  });
 
   Country.fromJson(dynamic json) {
     id = json['id'];

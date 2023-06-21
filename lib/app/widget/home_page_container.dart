@@ -5,16 +5,24 @@ import 'package:rootdev/app/constant/app_colors.dart';
 class HomePageContainer extends StatelessWidget {
   final String day;
   final String date;
-  const HomePageContainer({super.key, required this.day, required this.date});
+  final bool selected;
+
+  const HomePageContainer(
+      {super.key,
+      required this.day,
+      required this.date,
+      this.selected = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50.h,
-      width: 70.w,
+      height: 40.h,
+      width: 80.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
-        color: AppColors.greyColor.withOpacity(0.5),
+        color: (selected)
+            ? AppColors.whiteColor
+            : AppColors.greyColor.withOpacity(0.5),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -22,10 +30,17 @@ class HomePageContainer extends StatelessWidget {
         children: [
           Text(
             day,
-            style: TextStyle(color: Colors.white),
+            style: (selected)
+                ? TextStyle(color: Colors.black, fontSize: 14.sp)
+                : TextStyle(color: Colors.white, fontSize: 14.sp),
           ),
-          Text(date,style: TextStyle(color: Colors.white),)
-      ],),
+          Text(
+            date,
+            style: (selected)
+                ? TextStyle(color: Colors.black, fontSize: 14.sp)
+                : TextStyle(color: Colors.white, fontSize: 14.sp),
+          )
+        ],),
 
     );
   }

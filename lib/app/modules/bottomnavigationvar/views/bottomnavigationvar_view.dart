@@ -18,8 +18,8 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
           resizeToAvoidBottomInset: false,
           body: controller.tabs[controller.currentIndex.value],
           bottomNavigationBar: Container(
-            color: AppColors.blackColor,
-            height: 80,
+            color: AppColors.bottomBackGroundColor,
+            height: 60,
             child: TabBar(
               controller: controller.tapController,
               indicatorColor: Colors.transparent,
@@ -47,7 +47,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
                         color: (controller.currentIndex.value == 0)
                             ? AppColors.selectedColor
                             : AppColors.unSelectedColor,
-                        size: 40,
+                        size: 25,
                       ),
                       Text(
                         "FIXTURE",
@@ -72,7 +72,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
                         color: (controller.currentIndex.value == 1)
                             ? AppColors.selectedColor
                             : AppColors.unSelectedColor,
-                        size: 40,
+                        size: 25,
                       ),
                       Text(
                         "FAVORITE",
@@ -97,7 +97,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
                         color: (controller.currentIndex.value == 2)
                             ? AppColors.selectedColor
                             : AppColors.unSelectedColor,
-                        size: 40,
+                        size: 25,
                       ),
                       Text(
                         "VIDEO",
@@ -122,7 +122,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
                         color: (controller.currentIndex.value == 3)
                             ? AppColors.selectedColor
                             : AppColors.unSelectedColor,
-                        size: 40,
+                        size: 25,
                       ),
                       Text(
                         "NEWS",
@@ -147,7 +147,7 @@ class BottomnavigationvarView extends GetView<BottomnavigationvarController> {
                         color: (controller.currentIndex.value == 4)
                             ? AppColors.selectedColor
                             : AppColors.unSelectedColor,
-                        size: 40,
+                        size: 25,
                       ),
                       Text(
                         "STANDINGS",

@@ -40,7 +40,7 @@ class AllLeaguesWidget extends StatelessWidget {
       children: [
         Container(
           width: Get.width,
-          color: const Color(0xFFFFFFFFE4),
+          color: AppColors.containerColor.withOpacity(0.1),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -50,31 +50,21 @@ class AllLeaguesWidget extends StatelessWidget {
                   padding: EdgeInsets.only(
                     top: 10.0.h,
                     bottom: 10.0.h,
-                    left: 10.w,
+                    left: 15.w,
                   ),
                   child: Container(
-                    height: 60.h,
-                    width: 50.w,
+                    height: 45.h,
+                    width: 45.w,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: AppColors.whiteColor,
+                      image: DecorationImage(
+                        image: NetworkImage(ligueImage),
+                        fit: BoxFit.contain,
+                      ),
                       borderRadius: BorderRadius.circular(18),
                       border: Border.all(
                           width: 1,
                           color: AppColors.greyColor.withOpacity(0.4)),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Container(
-                        height: 50.h,
-                        width: 50.w,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(ligueImage),
-                            fit: BoxFit.contain,
-                          ),
-                          // color: Colors.amberAccent,
-                        ),
-                      ),
                     ),
                   ),
                 ),
@@ -114,9 +104,9 @@ class AllLeaguesWidget extends StatelessWidget {
           ),
         ),
         Container(
-          height: 12,
+          height: 3,
           width: Get.width,
-          color: Colors.white,
+          color: AppColors.whiteColor,
         ),
         SizedBox(
           width: Get.width,
@@ -126,57 +116,75 @@ class AllLeaguesWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: Get.width * 0.38,
-                  height: 110.h,
-                  child: Center(
-                    child: ListTile(
-                      dense: true,
-                      contentPadding:
-                          const EdgeInsets.only(left: 0.0, right: 0.0),
-                      leading: Container(
-                        height: 60.h,
-                        width: Get.width * 0.1,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage("$teamImage1"))),
-                      ),
-                      title: Text(
-                        teamName1,
-                        style: textRegularStyle(
-                            fontSize: 18, fontWeight: FontWeight.w500),
-                      ),
-                    ),
-                  ),
-                ),
-                AppWidgets().gapW10(),
-                RotationTransition(
-                  turns: const AlwaysStoppedAnimation(-2 / 360),
+                Padding(
+                  padding: EdgeInsets.only(left: 3.0.w),
                   child: Container(
-                    height: 80.h,
-                    width: Get.width * 0.2,
-                    color: Colors.grey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text("$score1 - $score2"),
-                        Text(state),
-                      ],
+                    width: Get.width * 0.38,
+                    height: 65.h,
+                    color: AppColors.containerColor.withOpacity(0.1),
+                    child: Center(
+                      child: ListTile(
+                        dense: true,
+                        contentPadding:
+                            const EdgeInsets.only(left: 0.0, right: 0.0),
+                        leading: Container(
+                          height: 60.h,
+                          width: Get.width * 0.1,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(teamImage1))),
+                        ),
+                        title: Text(
+                          teamName1,
+                          style: textRegularStyle(
+                              fontSize: 18, fontWeight: FontWeight.w500),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-                AppWidgets().gapW16(),
+                AppWidgets().gapW(8),
+                RotationTransition(
+                  turns: const AlwaysStoppedAnimation(-4 / 360),
+                  child: Container(
+                    height: 65.h,
+                    width: Get.width * 0.18,
+                    color: AppColors.bottomBackGroundColor,
+                    child: RotationTransition(
+                      turns: const AlwaysStoppedAnimation(4 / 360),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            "$score1 - $score2",
+                            style: textRegularStyleW600(
+                                color: AppColors.whiteColor, fontSize: 18),
+                          ),
+                          Container(
+                            color: AppColors.greyColor.withOpacity(0.9),
+                            child: Text(
+                              state,
+                              style: textRegularStyleW600(
+                                  color: AppColors.whiteColor, fontSize: 18),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                AppWidgets().gapW(8),
                 Container(
                   width: Get.width * 0.48,
-                  // color: Colors.brown,
-                  height: 60,
+                  color: AppColors.containerColor.withOpacity(0.1),
+                  height: 65.h,
                   child: Center(
                     child: ListTile(
                       dense: true,
                       contentPadding:
                           const EdgeInsets.only(left: 0.0, right: 0.0),
                       leading: Container(
-                        height: 60.h,
+                        height: 65.h,
                         width: Get.width * 0.1,
                         decoration: BoxDecoration(
                             image: DecorationImage(

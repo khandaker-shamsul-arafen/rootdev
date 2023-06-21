@@ -3,8 +3,11 @@ import 'package:get/get.dart';
 
 import '../../home/controllers/home_controller.dart';
 import '../../home/views/home_view.dart';
+import '../../testpage/views/testpage_view.dart';
+import '../../testpage2/views/testpage2_view.dart';
 
-class BottomnavigationvarController extends GetxController with GetSingleTickerProviderStateMixin {
+class BottomnavigationvarController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   //TODO: Implement BottomnavigationvarController
   RxInt currentIndex = 0.obs;
   late TabController? tapController;
@@ -12,8 +15,8 @@ class BottomnavigationvarController extends GetxController with GetSingleTickerP
 
   var tabs = [
     const HomeView(),
-    const HomeView(),
-    const HomeView(),
+    const TestpageView(),
+    const Testpage2View(),
     const HomeView(),
     const HomeView(),
   ];
@@ -25,6 +28,8 @@ class BottomnavigationvarController extends GetxController with GetSingleTickerP
       length: 5,
       vsync: this,
     );
+    print("${Get.height}");
+    print("${Get.width}");
     super.onInit();
   }
 

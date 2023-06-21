@@ -18,7 +18,7 @@ TextStyle textRegularStyle(
 }
 
 TextStyle appbarTextStyle(
-    {double fontSize = fontSize20,
+    {double fontSize = fontSize28,
     fontWeight = FontWeight.bold,
     color = AppColors.blackColor}) {
   return TextStyle(
